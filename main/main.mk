@@ -1,3 +1,3 @@
 build:
-	go build -o main.go main
+	go build -o main main.go
 .PHONY: build

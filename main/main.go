@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	p "make_file_test/svc"
+	p "github.com/Kev9527/make_file_test"
 )
 
 func main() {
