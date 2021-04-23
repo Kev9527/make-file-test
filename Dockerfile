@@ -6,7 +6,7 @@ WORKDIR /hello
 COPY go.mod /hello
 COPY /main/main.go /hello
 COPY /svc /hello
-RUN go build -o main .
+RUN CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o main .
 
 FROM ubuntu AS runstage
 WORKDIR /root

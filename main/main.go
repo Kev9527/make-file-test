@@ -3,8 +3,9 @@ package main
 import (
 	"fmt"
 
-	"github.com/Kev9627/make_file_test/svc/a"
-	"github.com/Kev9627/make_file_test/svc/b"
+	"github.com/Kev9527/make_file_test/svc/b"
+
+	"github.com/Kev9527/make_file_test/svc/a"
 )
 
 func main() {
