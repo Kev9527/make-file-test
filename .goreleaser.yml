@@ -47,7 +47,7 @@ dockers:
     # Templates of the Docker image names.
     image_templates:
       - "a:latest"
-    dockerfile: make_file_test/a/Dockerfile
+    dockerfile: make-file-test/a/Dockerfile
 
 checksum:
   name_template: "checksums.txt"
