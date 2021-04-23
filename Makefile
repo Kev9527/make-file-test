@@ -8,6 +8,5 @@ release:
 .PHONY: release
 
 docker:
-	@make build
 	@docker build -t gohello:$(tag) .
 .PHONY: docker 
