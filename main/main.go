@@ -1,14 +1,22 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"time"
 )
 
 const TIME_LAYOUT = "2006-01-02 15:04:05"
 
+var zone = "UTC"
+
+func init() {
+	flag.StringVar(&zone, "zone", "", "missing zoneinfo")
+}
+
 func main() {
-	fmt.Println("test")
+	flag.Parse()
+	fmt.Println(zone)
 	t := time.Now().UTC()
 	locZone := getLocalTimeZone()
 	parsedTime := t.In(locZone)
