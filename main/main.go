@@ -18,14 +18,14 @@ func main() {
 	flag.Parse()
 	fmt.Println(zone)
 	t := time.Now().UTC()
-	locZone := getLocalTimeZone()
+	locZone := getLocalTimeZone(zone)
 	parsedTime := t.In(locZone)
 	fmt.Println("local time zone is: ", locZone)
 	fmt.Println("parsed time is: ", parsedTime)
 }
 
-func getLocalTimeZone() *time.Location {
-	local1, err1 := time.LoadLocation("") //等同于"UTC"
+func getLocalTimeZone(locStr string) *time.Location {
+	local1, err1 := time.LoadLocation(locStr) //等同于"UTC"
 	if err1 != nil {
 		fmt.Println(err1)
 	}

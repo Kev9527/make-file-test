@@ -8,5 +8,5 @@ release:
 .PHONY: release
 
 docker:
-	@docker build -t gohello:$(tag) .
+	@docker build --target runstage -t goimage:$(tag) . 
 .PHONY: docker 
