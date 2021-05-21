@@ -1,5 +1,6 @@
 export GORELEASER := $(shell which goreleaser)
 
+
 include main/main.mk
 # Release wia goreleaser
 release:
@@ -8,5 +9,5 @@ release:
 .PHONY: release
 
 docker:
-	@docker build --target runstage -t goimage:$(tag) . 
+	@docker build --target $(stage_version) -t goimage:$(tag) . 
 .PHONY: docker 

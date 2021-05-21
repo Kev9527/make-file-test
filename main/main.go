@@ -6,19 +6,16 @@ import (
 	"time"
 )
 
-const TIME_LAYOUT = "2006-01-02 15:04:05"
+var timeZone = flag.String("zone", timeZoneDefault, "时区")
 
-var zone = "UTC"
-
-func init() {
-	flag.StringVar(&zone, "zone", "", "missing zoneinfo")
-}
+const (
+	timeZoneDefault = "Asia/Shanghai"
+)
 
 func main() {
 	flag.Parse()
-	fmt.Println(zone)
 	t := time.Now().UTC()
-	locZone := getLocalTimeZone(zone)
+	locZone := getLocalTimeZone(*timeZone)
 	parsedTime := t.In(locZone)
 	fmt.Println("local time zone is: ", locZone)
 	fmt.Println("parsed time is: ", parsedTime)
